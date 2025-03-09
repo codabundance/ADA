@@ -1,4 +1,4 @@
-public abstract class Sorting
+public abstract class SortingBase
 {
     protected void swap(List<int> arr, int idx1, int idx2)
     {

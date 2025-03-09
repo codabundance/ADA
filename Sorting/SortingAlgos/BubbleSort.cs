@@ -1,5 +1,5 @@
 
-public class BubbleSort : Sorting
+public class BubbleSort : SortingBase
 {
     public override void Sort(List<int> arr)
     {

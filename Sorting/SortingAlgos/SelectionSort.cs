@@ -1,5 +1,5 @@
 
-public class SelectionSort : Sorting
+public class SelectionSort : SortingBase
 {
     public override void Sort(List<int> arr)
     {

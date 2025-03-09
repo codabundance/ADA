@@ -12,3 +12,4 @@
 /Users/saurabhsingh/Documents/Projects/Apps/ADA/Sorting/obj/Debug/net8.0/Sorting.pdb
 /Users/saurabhsingh/Documents/Projects/Apps/ADA/Sorting/obj/Debug/net8.0/Sorting.genruntimeconfig.cache
 /Users/saurabhsingh/Documents/Projects/Apps/ADA/Sorting/obj/Debug/net8.0/ref/Sorting.dll
+/Users/saurabhsingh/Documents/Projects/Apps/ADA/Sorting/obj/Debug/net8.0/Sorting.sourcelink.json

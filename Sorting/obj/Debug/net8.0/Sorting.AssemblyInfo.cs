@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sorting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01565b335c986d2d1b3ad5edbf386846d270a3b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sorting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sorting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
