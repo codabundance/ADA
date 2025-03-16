@@ -1,5 +1,2 @@
-Sorting/obj/Debug/net8.0/Sorting.GlobalUsings.g.cs
-Sorting/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
-Sorting/obj/Debug/net8.0/Sorting.AssemblyInfo.cs
-Sorting/obj/Debug/net8.0/Sorting.AssemblyInfoInputs.cache
-Sorting/obj/Debug/net8.0/Sorting.GeneratedMSBuildEditorConfig.editorconfig
+Sorting/obj/*
+Sorting/Debug/*
