@@ -14,7 +14,7 @@ Complexity
 Time - O(m+n), Space - O(1) 
 
 Approach 2: We can also have a binary search approach where we try to find one element in the second array using binary search.
-Time - O(nlog n), Space - O(1)
+Time - O(nlog n), Space - O(n+m)
 
 Comparison
 Take cases where N << M. E.g. N = 100, M = 10 pow 6.
