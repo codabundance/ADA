@@ -19,10 +19,10 @@ public class PalindromicSubstring
     public List<string> generate_palindromic_decompositions(string s) 
     {
         // Write your code here.
-        List<string> answer = new List<string>();
-        List<string> result = new List<string>();
+        List<string> answer = [];
+        List<string> result = [];
         // we dont want solution to be empty but to contain the first charachter of string always As it should start from there.
-        Generate_all_permutations(result,s[1..],s[0].ToString());
+        Generate_all_permutations(result,s[1..],0,s[0].ToString());
         foreach(string str in result)
         {
             string [] splittedarray = str.Split('|');
@@ -37,8 +37,16 @@ public class PalindromicSubstring
         }
         return answer;
     }
+    public List<string> generate_palindromic_decompositions_1(string s) 
+    {
+        // Write your code here.
+        List<string> result = [];
+        // we dont want solution to be empty but to contain the first charachter of string always As it should start from there.
+        Generate_all_permutations_1(result,s[1..],0,s[0].ToString());
+        return result;
+    }
     
-    private static void Generate_all_permutations(List<string> result,string problem, string slate)
+    private static void Generate_all_permutations(List<string> result,string problem, int index, string slate)
     {
         // generate all decompositions of the string
         // Let the string be "abracadabra"
@@ -46,21 +54,49 @@ public class PalindromicSubstring
         // The rightmost extreme decomposition would be abracadabra
         // We need to find the decompositions in which all of the substrings are palindrome.
         // For each charachter of string we have 2 choices - either put a | or put a blank.
-        if(problem.Length == 0)
+        if(problem.Length == index)
         {
             result.Add(slate);
             return;
         }
-        for(int j = 0; j< problem.Length; j++)
+        
+        // New Problem need to be crated. Remember in case of Permutation we cannot manipulate indices as we need to travel back
+        // In combinations we can do that because once in move one step ahead we dont need to come back to the prevousl element.
+        // New solution will have 2 choices now - one by adding a "|" and another by adding nothing.
+        Generate_all_permutations(result, problem, index+1, slate+"|"+problem[index]);
+        Generate_all_permutations(result, problem, index+1, slate+problem[index]);
+    }
+    private static void Generate_all_permutations_1(List<string> result,string problem, int index, string slate)
+    {
+        // generate all decompositions of the string
+        // Let the string be "abracadabra"
+        // The leftmost extreme ecomposition would be a|b|r|a|c|a|d|a|b|r|a
+        // The rightmost extreme decomposition would be abracadabra
+        // We need to find the decompositions in which all of the substrings are palindrome.
+        // For each charachter of string we have 2 choices - either put a | or put a blank.
+        if(problem.Length == index)
         {
-            // New Problem need to be crated. Remember in case of Permutation we cannot manipulate indices as we need to travel back
-            // In combinations we can do that because once in move one step ahead we dont need to come back to the prevousl element.
-            // New solution will have 2 choices now - one by adding a "|" and another by adding nothing.
-            string stringToAdd = problem[j].ToString();
-            string new_problem = problem.Remove(j,1);
-            Generate_all_permutations(result, new_problem, slate + stringToAdd);
-            Generate_all_permutations(result, new_problem, slate+"|"+stringToAdd);
+            if(IsPalindromicDecomposition(slate))
+                result.Add(slate);
+            return;
         }
+        
+        // New Problem need to be crated. Remember in case of Permutation we cannot manipulate indices as we need to travel back
+        // In combinations we can do that because once in move one step ahead we dont need to come back to the prevousl element.
+        // New solution will have 2 choices now - one by adding a "|" and another by adding nothing.
+        Generate_all_permutations_1(result, problem, index+1, slate+"|"+problem[index]);
+        Generate_all_permutations_1(result, problem, index+1, slate+problem[index]);
+    }
+    private static bool IsPalindromicDecomposition(string slate)
+    {
+        string [] splittedarray = slate.Split('|');
+        bool IsPalindromicString = true;
+        foreach(string str2 in splittedarray)
+        {
+            if(!IsPalindrome(str2))
+                IsPalindromicString = false;
+        }
+        return IsPalindromicString;
     }
     private static bool IsPalindrome(string str)
     {
@@ -72,8 +108,8 @@ public class PalindromicDecomposition
 {
     public List<string> GeneratePalindromicDecompositions(string s)
     {
-        List<string> result = new List<string>();
-        List<string> currentPartition = new List<string>();
+        List<string> result = [];
+        List<string> currentPartition = [];
 
         Backtrack(s, 0, currentPartition, result);
         return result;
