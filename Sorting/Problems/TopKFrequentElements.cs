@@ -35,10 +35,10 @@ public class TopKFrequentElements
                 counter.Add(arr[i], 1);
         }
         // We can use quick search with lomuto's partitioning now over item's frequency to give the most frequent 4 elements
-        int k_largest_index = counter.Count - k;
         // We can form an array of Keys and then do partitioning on that array.
         // While comparing, we can use the array elements as key and compare the values from dictionary
         List<int> keys = counter.Keys.ToList();
+        int k_largest_index = keys.Count - k;
         quick_select(counter, keys,k_largest_index, 0, counter.Count-1);
         for(int j=k_largest_index; j< keys.Count ; j++)
         {
@@ -51,14 +51,14 @@ public class TopKFrequentElements
     {
         if(start > end)
             return;
-        int pivot = new Random().Next(start,end+1);
+        int pivot = start;
         // bring piviot to the first position.
-        Swap(uniqueKeys,start,pivot);
+        //Swap(uniqueKeys,start,pivot);
 
         int left = start;
         int right = start+1;
 
-        while(right < end)
+        while(right <= end)
         {
             // While comparing, we can use the array elements as key and compare the values from dictionary
             if(counter[uniqueKeys[right]] < counter[uniqueKeys[pivot]])
