@@ -11,7 +11,7 @@ public class MinHeap
 
     public MinHeap()
     {
-        heap = new List<int>();
+        heap = new List<int>(4);
     }
 
     private int Parent(int i) => (i - 1) / 2;
