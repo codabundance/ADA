@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Sorting.Problems;
 /*
@@ -28,18 +29,19 @@ public class KthLargestInStream
         return result;
     }
 
-    public static List<int> kth_largest_min(int k, List<int> initial_stream, List<int> append_stream) {
+    public static List<int> kth_largest_min(int k, List<int> initial_stream, List<int> append_stream) 
+    {
         // Write your code here.
-        //MaxHeap approach
+        //Min Heap approach
         List<int> result = new();
         MinHeap minHeap = new();
         int i= 0;
-        while(i <= k)
+        while(i < k)
         {
-            minHeap.Insert(i);
+            minHeap.Insert(initial_stream[i]);
             i++;
         }
-        while(i <=initial_stream.Count)
+        while(i < initial_stream.Count)
         {
             if(minHeap.Peek() < initial_stream[i])
             {
@@ -55,8 +57,9 @@ public class KthLargestInStream
                 minHeap.ExtractMin();
                 minHeap.Insert(val);
             }
-            for(int m = 0; m < k; m++)
-                result.Add(minHeap.ExtractMin());
+            var v = minHeap.ExtractMin();
+            result.Add(v);
+            minHeap.Insert(v); // Reinstert the extracted value
         }
         return result;
     }

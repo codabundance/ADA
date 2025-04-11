@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class MaxHeap
 {
     private List<int> heap;
-
+    public int Count => heap.Count;
     public MaxHeap()
     {
         heap = new List<int>();

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class MinHeap
 {
     private List<int> heap;
-
+    public int Count => heap.Count;
     public MinHeap()
     {
         heap = new List<int>(4);
