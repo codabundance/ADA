@@ -67,7 +67,7 @@ Implementing this algorithm in this class as this is the most efficient
  */
 public class OnlineMedian
 {
-    public static List<int> online_median(List<int> stream)
+    public static List<int> Online_median(List<int> stream)
     {
         MinHeap minHeap = new MinHeap();
         MaxHeap maxHeap = new MaxHeap();
