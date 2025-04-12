@@ -20,6 +20,7 @@ public class Combinations
             results.Add(new_slate);
             return;
         }
+        //This condition is used to terminate those branches of the R. Tree which donot grow to the size k. Eg.All Exclusive
         if(index == arr.Count)
             return;
         // Include current element

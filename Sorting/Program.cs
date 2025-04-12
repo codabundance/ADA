@@ -7,7 +7,10 @@ using Sorting.Problems;
 // var result = TopKFrequentElements.find_top_k_frequent_elements([1, 2, 3, 2, 4, 3, 1],2);
 // Console.WriteLine(string.Join(", ", result));
 //var result = KthLargestInStream.kth_largest_min(2, [4,6],[5,2,20]);
-var result = OnlineMedian.Online_median([3, 8, 5, 2]);
-Console.WriteLine(string.Join(", ", result));
+// var result = OnlineMedian.Online_median([3, 8, 5, 2]);
+// Console.WriteLine(string.Join(", ", result));
+
+var result = MultiplePartitions.RearrangeSameCharachtersTogether("abdcebaaddefbcefgabgfccdabgef",['a','b','c','d','e','f','g']);
+Console.WriteLine(result);
 
 

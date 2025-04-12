@@ -15,6 +15,7 @@ public class Permutations
 
     private static void Permute_Help(IList<int> nums, IList<IList<int>> result, IList<int> slate)
     {
+        //we cannot use slate count == arr.count because arr.count keeps decreasing. We could have used size of array as an argument N.
         if(nums.Count == 0)
         {
             result.Add(slate);
