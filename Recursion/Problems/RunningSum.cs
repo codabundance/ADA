@@ -13,11 +13,12 @@ public class RunningSum
     private static bool Helper(List<long> arr, long k, int i, long running_length, long running_sum)
     {
         // assuming array can have negative integers.
-        // Running length is important to handle the K=0 use case. If running_length is greater than 0, that means atleast one 
-        // recursion node has been formed. This means Sum will be 0 because we have added negative numbers in recursive tree
-        // Not because of initial case where we pass 0 from calling function.
+        // Running length is important to handle the K=0 use case. If running_length is greater than 0, that means at least one 
+        // recursion node has been formed. This means Sum will be 0 because we have added negative numbers in recursive tree and
+        // not because of initial case where we pass 0 from calling function.
         if(running_sum == k && running_length > 0)
             return true;
+        // return also if sum never reaches K and all elements are exhausted.
         if(i == arr.Count)
             return false;
         bool res1 = Helper(arr,k,i+1,running_length,running_sum);
