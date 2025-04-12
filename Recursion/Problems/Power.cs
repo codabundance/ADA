@@ -26,4 +26,19 @@ public class Power
         else
             return calculate_power_recur(a, b/2) % 1000000007 * calculate_power_recur(a,b/2) % 1000000007 % 1000000007 * (a % 1000000007);
     }
+
+// When we know that same method will be called recursively for even as well as odd cases
+// Then call it once and save the call value in a temp variable and then work on that temp.
+// This is sort of memoization.
+    public static int calculate_power_optimal(long a, long b) {
+        // Write your code here.
+        int mod = 1000000007;
+        if(b == 0)  return 1;
+        //memoization
+        long temp = calculate_power_optimal(a,b/2);
+        temp = (temp * temp) % mod;
+        if(b % 2 == 1) // b is even
+             temp = (temp * a) % mod;
+        return (int)temp;
+    }
 }
