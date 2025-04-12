@@ -26,7 +26,7 @@ Output:
 */
 public class StringsWithWildCharachter
 {
-    public static List<string> find_all_possibilities(string s) 
+    public static List<string> Find_all_possibilities(string s) 
     {
         // Write your code here.
         var result = new List<string>();
