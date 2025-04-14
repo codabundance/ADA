@@ -23,7 +23,7 @@ public class ConstructTreePostIn
         int rootIndex = hash[postorder[endP]];
         int numright = endI - rootIndex;
         root.left = Helper(postorder, startP, endP - numright -1 ,inorder,startI, rootIndex - 1);
-        root.right = Helper(postorder,endP - numright+1,endP-1,inorder,rootIndex+1, endI);
+        root.right = Helper(postorder,endP - numright ,endP-1,inorder,rootIndex+1, endI);
         return root;
     }
 }
