@@ -22,4 +22,5 @@ using Trees.Problems;
 // DeletionBST.Delete_from_bst(root, valuesTobeDeleted);
 //BFS.Level_order_traversal(root);
 
-ConvertSortedArrayToBST.SortedArrayToBST([-10,-3,0,5,9]);
+//ConvertSortedArrayToBST.SortedArrayToBST([-10,-3,0,5,9]);
+var result = new ConstructTreePostIn().BuildTree([3,9,20,15,7],[9,3,15,20,7]);
