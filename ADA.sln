@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion", "Recursion\Recu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{5C33D7CC-D089-4A1D-A151-7191E76BDAB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{B83862C6-9DB5-441B-92D2-F829D7F5F922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5C33D7CC-D089-4A1D-A151-7191E76BDAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C33D7CC-D089-4A1D-A151-7191E76BDAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C33D7CC-D089-4A1D-A151-7191E76BDAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
