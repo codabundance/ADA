@@ -7,7 +7,7 @@ public class ContructBSTPreorder
 
     public TreeNode BstFromPreorder(int[] preorder) 
     {
-        
+        return null;
     }
     /*
     Approach 1: Sort the preorder array, then it becomes Inorder

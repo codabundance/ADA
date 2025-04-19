@@ -29,14 +29,15 @@ using Graph.Problems;
 // [1, 3],
 // [3, 4]
 // ]);
-var result = BFSGraph.bfs_traversal(6, [
-[0, 1],
-[0, 2],
-[0, 4],
-[2, 3]
-]);
-foreach (var edge in result)
-{
-    Console.WriteLine(string.Join(",", edge));
-}
+// var result = BFSGraph.bfs_traversal(6, [
+// [0, 1],
+// [0, 2],
+// [0, 4],
+// [2, 3]
+// ]);
+// foreach (var edge in result)
+// {
+//     Console.WriteLine(string.Join(",", edge));
+// }
+Console.WriteLine(GraphIsValidTree.is_it_a_tree(4,[0,0,0],[1,2,3]));
 
