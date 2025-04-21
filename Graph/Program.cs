@@ -39,5 +39,12 @@ using Graph.Problems;
 // {
 //     Console.WriteLine(string.Join(",", edge));
 // }
-Console.WriteLine(GraphIsValidTree.is_it_a_tree(4,[0,0,0],[1,2,3]));
+//Console.WriteLine(GraphIsValidTree.is_it_a_tree(4,[0,0,0],[1,2,3]));
+// var result = new Bipartite().IsBipartite([[1,3],[0,2],[1,3],[0,2]]);
+// Console.WriteLine(result);
+var result = NumberOfIslands.NumIslands([['1','1','1','1','0'],
+  ['1','1','0','1','0'],
+  ['1','1','0','0','0'],
+  ['0','0','0','0','0']]);
+  Console.WriteLine(result);
 

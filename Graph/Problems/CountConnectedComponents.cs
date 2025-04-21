@@ -36,6 +36,10 @@ public class CountConnectedComponents
                 // Eveytime a DFS is launched we know that there is one more connected component.
                 // Because if we would have only 1 connected component, all nodes would have been visited in single DFS
                 // We coould also have used DFS instead of BFS here.
+                // In case the numbers are not ranging from 0 to n-1, but any random value, then we need following
+                // 1. What is the source node shouled be given by problem.
+                // 2. we will have to change the visited array into a hashmap 
+                // 3. We will change adjacency list into hashmap
                 componentCounter++;
                 // Step 2: DFS/BFS
                 DFS(i,adjList,visited);
