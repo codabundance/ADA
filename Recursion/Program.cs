@@ -27,10 +27,10 @@ Console.WriteLine(result);
 // sack.GetItems(items, 7);
 // Console.WriteLine($"Max Profit is:{sack.max_profit}");
 // sack.items_with_max_profit.ForEach(x => Console.WriteLine($"Name:{x.Name}, Weight:{x.weight}, Price:{x.price}"));
-var result = StringsWithWildCharachter.Find_all_possibilities("1?10");
+var result = PermutationsDuplicate.get_permutations([1, 2, 2]);
 foreach (var result_item in result)
 {
-    Console.WriteLine(result_item);
+    Console.WriteLine(string.Join(",",result_item));
 }
 
 

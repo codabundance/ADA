@@ -21,11 +21,18 @@ public class Permutations
             result.Add(slate);
             return;
         }
+        // Why we need loop here if we have recursion
+        // It's like fill in the blanks, we fix the first item i.e. i=0 at first place and then recurse
+        // We then fix the second place with 1st among remaining n-1 items i.e. i=1
+        // So we need loop everytime to iterate over all the remaining elements in problem and fix them one by one
+        // So recursion takes us to one after another places to fill, and loop gives us all possible values that can be filled.
         for(int i=0;i < nums.Count;i++)
         {
-            List<int> new_slate =[..slate]; // create a copy
+            // create a copy because we want to maintain the same state when control comes back after recursion
+            // If we dont make a copy, the problem and solution both will have the state what subsequent recursion calls have created
+            List<int> new_slate =[..slate]; 
             new_slate.Add(nums[i]);
-            List<int> new_nums = [.. nums]; // create a copy
+            List<int> new_nums = [.. nums];
             new_nums.RemoveAt(i);
             Permute_Help(new_nums, result, new_slate);
         }
