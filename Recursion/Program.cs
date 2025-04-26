@@ -27,7 +27,14 @@ Console.WriteLine(result);
 // sack.GetItems(items, 7);
 // Console.WriteLine($"Max Profit is:{sack.max_profit}");
 // sack.items_with_max_profit.ForEach(x => Console.WriteLine($"Name:{x.Name}, Weight:{x.weight}, Price:{x.price}"));
-var result = PermutationsDuplicate.get_permutations([1, 2, 2]);
+// var result = PermutationsDuplicate.get_permutations([1, 2, 2]);
+// foreach (var result_item in result)
+// {
+//     Console.WriteLine(string.Join(",",result_item));
+// }
+// var result = UniqueSubsets.get_distinct_subsets("dc");
+// Console.WriteLine(string.Join(",",result));
+var result = AllPhoneNumbers.get_words_from_phone_number("1234567");
 foreach (var result_item in result)
 {
     Console.WriteLine(string.Join(",",result_item));
