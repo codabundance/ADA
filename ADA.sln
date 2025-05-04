@@ -11,13 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{B83862C6-9DB5-441B-92D2-F829D7F5F922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DP", "DP\DP.csproj", "{CAB8CC20-36A1-4E65-81DC-8F8D615E5470}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3F4D1B88-1EF7-49B4-A41B-73D5E8AD386B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,5 +35,12 @@ Global
 		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83862C6-9DB5-441B-92D2-F829D7F5F922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB8CC20-36A1-4E65-81DC-8F8D615E5470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB8CC20-36A1-4E65-81DC-8F8D615E5470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB8CC20-36A1-4E65-81DC-8F8D615E5470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB8CC20-36A1-4E65-81DC-8F8D615E5470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
