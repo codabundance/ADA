@@ -61,6 +61,10 @@ public class EditDistance
         }
         else
         {
+            // if the chars are different, then we can do 3 things
+            // Insert char in first string from second string - increment i and not j
+            // Delete char in first string  - increment j and not i
+            // Replace char in first string from second string - increment j and i.
             var val =  1 + Math.Min(Math.Min(Helper(S1, S2, i+1, j,memo),
             Helper(S1, S2, i, j+1,memo)),
             Helper(S1, S2, i+1, j+1,memo));
@@ -85,12 +89,20 @@ public class EditDistance
         {
             for(int col = 1; col <= word2.Length; col++)
             {
+                //If both the charachters are same then no action required, so move the pointers forward
                 if(word1[row-1] == word2[col-1])
                    table[row,col] = table[row-1,col-1];
                 else
-                    table[row,col] = table[]
+                // if the chars are different, then we can do 3 things
+                // Insert char in first string from second string - increment i and not j
+                // Delete char in first string  - increment j and not i
+                // Replace char in first string from second string - increment j and i.
+                    table[row,col] = Math.Min(
+                    Math.Min(table[row-1,col-1], table[row, col-1]),
+                    table[row-1,col]);
 
             }
         }
+        return table[word1.Length-1,word2.Length-1];
     }
 }

@@ -29,6 +29,20 @@ public class WaysToTileFloor
 {
     public int numberOfWays(int n) {
         // code here
-        return 0;
+        int [] table = new int[n+1];
+        table[0] = 0;
+        table[1] = 1;
+        table[2] = 2;
+        // recurrence eq is like f(n) = f(n-1)+f(n-2)
+        // For nth fill, we have 2 options
+        // (n-1)th filled with vertical, so nth can be filled in one way
+        // (n-2)th filled with horizontal, so nth can be filled in another way
+        // So total ways can be f(n-1) + f(n-2)
+        // meaning total ways of tiles for n-1th and total ways of tiles till n-2th
+        for(int i=0; i< n; i++)
+        {
+            table[i] = table[i-1]+table[i-2];
+        }
+        return table[n];
     }
 }

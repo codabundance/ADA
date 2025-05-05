@@ -14,14 +14,18 @@ public class MinPathSum
         int n = grid[0].Length;
         int[,] table = new int[m, n];
         table[0,0] = grid[0][0];
+        // Fill the first row as base case
         for(int i=1;i<m;i++)
         {
             table[i,0] = table[i-1,0]+ grid[i][0];
         }
+        // fill the first column as base case
         for(int j=1;j<n;j++)
         {
             table[0,j] = table[0,j-1] + grid[0][j];
         }
+        // fill other rows and cols of the table based on recursion.
+        // follows optimal substrcuture, so we can use the recursion
         for(int k=1;k < m;k++)
         {
             for(int p=1;p < n;p++)
