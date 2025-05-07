@@ -13,6 +13,8 @@ public class PathSumII
             return [];
         IList<IList<int>> result = [];
         Helper(root,targetSum,0,[],result);
+        if(result.Count == 0)
+            result.Add(new List<int>(){-1});
         return result;
     }
 

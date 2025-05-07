@@ -1,7 +1,12 @@
 using System;
 
 namespace Trees;
-
+/*
+We cannot just add the right side child for each node, because in that case we will loose the entire left subtree
+We need to go through each level and pick the right most node at each level and add it to result
+so we follow the same approach and go level by level. Only that, this time, we will not add the entire nodes at a single level, but
+only the right most node or last node in the level list - slate.
+*/
 public class BinaryTreeRightSideView
 {
     public IList<int> RightSideView(BinaryTreeNode root) {
@@ -23,6 +28,7 @@ public class BinaryTreeRightSideView
             {
                 var node = q.Dequeue();
                 slate.Add(node.value);
+                //The order of addin left or right first is very important
                 if(node.left != null)
                     q.Enqueue(node.left);
                 if(node.right != null)
