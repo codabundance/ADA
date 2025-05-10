@@ -64,4 +64,57 @@ public class GraphIsValidTree
         }
         return false;
     }
+
+    public static bool is_it_a_tree_v2(int node_count, List<int> edge_start, List<int> edge_end) 
+    {
+        // Write your code here.
+        // A graphi is a tree if it has 1 connected component
+        // There is no cycle in the graph
+        
+        //create the graph
+        List<int>[] adjList = new List<int>[node_count];
+        for(int i=0;i< node_count;i++)
+            adjList[i] = new List<int>();
+        for(int j=0;j< edge_start.Count; j++)
+        {
+            adjList[edge_start[j]].Add(edge_end[j]);
+            adjList[edge_end[j]].Add(edge_start[j]);
+        }
+        bool[] visited = new bool[node_count];
+        int[] parent = new int[node_count];
+        for(int m=0; m< parent.Length; m++)
+            parent[m] = -1;
+        int connectedCount = 0;
+        for(int k=0; k<node_count;k++)
+        {
+            if(!visited[k])
+            {
+                connectedCount++;
+                if(connectedCount > 1 || IsCyclic(adjList, visited, parent,k))
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    private static bool IsCyclic(List<int>[] adjList, bool[] visited, int[] parent, int current)
+    {
+        visited[current] = true;
+        var neighbours = adjList[current];
+        foreach(var adj in neighbours)
+        {
+            if(!visited[adj])
+            {
+                parent[adj] = current;
+                if(IsCyclic(adjList, visited, parent, adj))
+                    return true;
+            }
+            else
+            {
+                if(parent[current] != adj)
+                    return true;
+            }
+        }
+        return false;
+    }
 }

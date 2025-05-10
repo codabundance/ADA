@@ -112,4 +112,60 @@ public class Bipartite
         }
         return false;
     }
+
+    public static bool can_be_divided(int num_of_people, List<int> dislike1, List<int> dislike2) {
+        // Write your code here.
+        List<int>[] adjList = new List<int>[num_of_people];
+        for(int i = 0; i< adjList.Length;i++)
+            adjList[i] = new List<int>();
+        for(int k =0; k< dislike1.Count; k++)
+        {
+            adjList[dislike1[k]].Add(dislike2[k]);
+            adjList[dislike2[k]].Add(dislike1[k]);
+        }
+        bool[] visited = new bool[num_of_people];
+        int[] parent = new int[num_of_people];
+        for (int j = 0; j< parent.Length; j++)
+            parent[j] = -1;
+        int[] distance = new int[num_of_people];
+        for (int j = 0; j< distance.Length; j++)
+            parent[j] = -1;
+
+        for(int curr=0; curr< num_of_people; curr++)
+        {
+            if(!visited[curr])
+            {
+                if(!IsDivisionPossible(adjList,visited,parent,distance,curr))
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    private static bool IsDivisionPossible(List<int>[] adjList, bool[] visited, int[] parent, int[] distance, int current)
+    {
+        Queue<int> queue = new Queue<int>();
+        queue.Enqueue(current);
+        visited[current] = true;
+        while( queue.Count > 0 )
+        {
+            var adj = queue.Dequeue();
+            foreach (int V in adjList[adj])
+            {
+                if(!visited[V])
+                {
+                    queue.Enqueue(V);
+                    visited[V] = true;
+                    parent[V] = adj;
+                    distance[V] = distance[adj]+1;
+                }
+                else
+                {
+                    if(parent[V] != adj && distance[V]==distance[adj])// Odd length cycle.
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
 }

@@ -33,10 +33,29 @@ using Trees.Problems;
 // root.left.right = new BinaryTreeNode(500);
 // var result = PostOrderWithoutRecursion.postorder_traversal(root);
 // Console.WriteLine(string.Join(", ", result));
-BinaryTreeNode root = new(200)
-{
-    left = new BinaryTreeNode(100),
-    right = new BinaryTreeNode(300)
-};
-var result = InorderIterator.implement_tree_iterator(root, ["next", "has_next", "next", "next", "has_next", "has_next", "next"]);
-Console.WriteLine(string.Join(", ", result));
+// BinaryTreeNode root = new(200)
+// {
+//     left = new BinaryTreeNode(100),
+//     right = new BinaryTreeNode(300)
+// };
+// var result = InorderIterator.implement_tree_iterator(root, ["next", "has_next", "next", "next", "has_next", "has_next", "next"]);
+// Console.WriteLine(string.Join(", ", result));
+
+// var linkedListNode = new LinkedListNode(-1)
+// {
+//     next = new LinkedListNode(2)
+// };
+// linkedListNode.next.next = new LinkedListNode(3);
+// linkedListNode.next.next.next = new LinkedListNode(5)
+// {
+//     next = new LinkedListNode(6)
+// };
+// linkedListNode.next.next.next.next.next = new LinkedListNode(7)
+// {
+//     next = new LinkedListNode(10)
+// };
+// var result = ConvertSortedArrayToBST.sorted_list_to_bst(linkedListNode);
+
+var result = CreateBSTFromPreorder.build_binary_search_tree([2, 0, 1, 3, 5, 4]);
+Console.WriteLine(result);
+

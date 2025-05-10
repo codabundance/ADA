@@ -102,4 +102,45 @@ public class NumberOfIslands
         }
         return multi;
     }
+
+    public static int count_islands(List<List<int>> matrix) 
+    {
+        // Write your code here.
+        int rows = matrix.Count;
+        int columns = matrix[0].Count;
+        bool[,] visited = new bool[rows,columns];
+        int count = 0;
+        for(int i=0; i< rows; i++)
+        {
+            for(int j=0; j< columns; j++)
+            {
+                if(matrix[i][j] == 1 && !visited[i,j])
+                {
+                    count++;
+                    IslandTraversal(visited,matrix,i,j,rows,columns);
+                }
+            }
+        }
+        return count;
+    }
+    
+    private static void IslandTraversal(bool[,] visited, List<List<int>> matrix, int r, int c, int rows, int cols)
+    {
+        //These 2 arrays give all possible combinations of coordinates to which we can go from current matrix element.
+        // combining each element from rowsarray to corresponding element in colsarray gives different coordinates
+        // E.g. -1,-1 means diagonal movements.
+        int[] rowsArray = new int[8]{-1,-1,-1,0,1,1,1,0};
+        int[] colsArray =new int[8]{-1,0,1,1,1,0,-1,-1};
+        visited[r,c] = true;
+        for(int i=0; i< 8; i++)
+        {
+            int new_r = r + rowsArray[i];
+            int new_c = c + colsArray[i];
+            // new row and col should not be out of bounds
+            // new row and col should have matrix value of 1
+            // new row and col matrix value should not have been visited already.
+            if(new_r >= 0 && new_r < rows && new_c >= 0 && new_c < cols && matrix[new_r][new_c] == 1 && !visited[new_r,new_c])
+                IslandTraversal(visited,matrix,new_r,new_c,rows,cols);
+        }
+    }
 }

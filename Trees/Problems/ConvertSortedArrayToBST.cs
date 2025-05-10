@@ -40,4 +40,32 @@ public class ConvertSortedArrayToBST
         node.right = CreateSubTree(nums, mid+1,end);
         return node;
     }
+
+    public static BinaryTreeNode sorted_list_to_bst(LinkedListNode head) {
+        // Write your code here.
+        List<int> nums = new();
+        var node = head;
+        while(node != null)
+        {
+            nums.Add(node.value);
+            node = node.next;
+        }
+        return CreateTree(nums,0,nums.Count-1);
+    }
+    
+    private static BinaryTreeNode CreateTree(List<int> nums, int start, int end)
+    {
+        if(start == end)//leaf node
+        {
+            BinaryTreeNode leaf = new BinaryTreeNode(nums[start]);
+            return leaf;
+        }
+        if(start > end)
+            return null;
+        int mid = (start + end)/2;
+        BinaryTreeNode node = new BinaryTreeNode(nums[mid]);
+        node.left = CreateTree(nums, start, mid-1);
+        node.right = CreateTree(nums, mid+1, end);
+        return node;
+    }
 }
