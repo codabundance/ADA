@@ -44,8 +44,11 @@ public class MinCoins
                     dp[j] = Math.Min(dp[j], dp[j-coin]);// For every subproblem, we find the min of ways it can be formed from diff coins.
                 }
             }
-            dp[j]++; // finanlly when we have found the min ways. We add one more to the current subproblems value in dp table. Remember : 1 + Min(f(n-c(i))
+            if(dp[j] < int.MaxValue)
+                dp[j]++; // finanlly when we have found the min ways. We add one more to the current subproblems value in dp table. Remember : 1 + Min(f(n-c(i))
         }
+        if(dp[value] == int.MaxValue)
+            return -1;
         return dp[value]; // finally return the min ways for forming value.
     }
 }
