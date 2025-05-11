@@ -72,7 +72,7 @@ using Graph.Problems;
 // [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, 3, -1, -1, -1, -1, -1, -1]);
 // Console.WriteLine(result);
 
-var result = CourseSchedule2.FindOrder(4,[[1,0],[2,0],[3,1],[3,2]]);
+var result = CourseSchedule2.FindOrder(2,[]);
 foreach (var item in result)
 {
   Console.Write(string.Join(",", item));
