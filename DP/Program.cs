@@ -10,5 +10,13 @@ using DP.Problems;
 // var result = new UniquePathsII().UniquePathsWithObstacles([[0,0,0],[0,1,0],[0,0,0]]);
 // Console.WriteLine(result);
 
-var result = new MinPathInTriangle().MinimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]);
+// var result = new MinPathInTriangle().MinimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]);
+// Console.WriteLine(result);
+
+// var result = LongestIncreasingSubsequence.LengthOfLISBottomUp([10, 9, 2, 5, 3, 7, 101, 18]);
+// Console.WriteLine(result);
+
+var result = LongestIncreasingSubsequence.LengthOfLISTopDown([7,7,7,7,7,7]);
 Console.WriteLine(result);
+
+
