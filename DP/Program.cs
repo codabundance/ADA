@@ -16,7 +16,10 @@ using DP.Problems;
 // var result = LongestIncreasingSubsequence.LengthOfLISBottomUp([10, 9, 2, 5, 3, 7, 101, 18]);
 // Console.WriteLine(result);
 
-var result = LongestIncreasingSubsequence.LengthOfLISTopDown([7,7,7,7,7,7]);
+// var result = LongestIncreasingSubsequence.LengthOfLISTopDown([7,7,7,7,7,7]);
+// Console.WriteLine(result);
+
+var result = WaysToMakeChange.Tabulation([1, 2, 3], 3);
 Console.WriteLine(result);
 
 
