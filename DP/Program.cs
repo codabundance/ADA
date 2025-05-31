@@ -19,7 +19,29 @@ using DP.Problems;
 // var result = LongestIncreasingSubsequence.LengthOfLISTopDown([7,7,7,7,7,7]);
 // Console.WriteLine(result);
 
-var result = WaysToMakeChange.Tabulation([1, 2, 3], 3);
+// var result = WaysToMakeChange.Tabulation([1, 2, 3], 3);
+// Console.WriteLine(result);
+
+//var result = CanSumHowSum.SumHowSum([7, 14], 300);
+// var result = CanSumHowSum.SumHowSumMemo([7, 14], 300, new Dictionary<int, List<int>>());
+// if (result == null)
+//     Console.WriteLine("");
+// else
+//     Console.WriteLine(string.Join(", ", result));
+
+// var result = CanSumHowSum.CanSumTab([2,3,5], 8);
+// Console.WriteLine(result);
+
+//var result = CanSumHowSum.HowSumTab([5, 3, 4,7], 7);
+
+// var result = BestSum.GetBestSumTab(3000, [2, 3, 5, 7]);
+// if (result != null)
+//     Console.WriteLine(string.Join(",", result));
+// else
+//     Console.WriteLine("");
+
+var result = CanConstruct.CanConstructTab(["ab", "abc", "cd", "def", "abcd"], "abcdef");
 Console.WriteLine(result);
+
 
 
