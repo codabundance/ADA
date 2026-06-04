@@ -9,9 +9,7 @@ public class MergeKSortedLists
     public static LinkedListNode Merge_k_lists(List<LinkedListNode> lists)
     {
         if(lists.Count == 0) 
-#pragma warning disable CS8603 // Possible null reference return.
             return null;
-#pragma warning restore CS8603 // Possible null reference return.
         return partition_merge(lists,0,lists.Count -1);
     }
     // Partition the list using merge sort algorithm. Once linked is partitioned and becomes null, start merging 2 lists.
