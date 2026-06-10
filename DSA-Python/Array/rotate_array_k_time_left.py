@@ -1,5 +1,4 @@
-
-    # Function to rotate the array to the left by k positions
+"""Function to rotate the array to the left by k positions"""
 def rotateArray_k(nums, k):
         n = len(nums)  # Size of array
         k = k % n  # To avoid unnecessary rotations
