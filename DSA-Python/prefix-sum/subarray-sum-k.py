@@ -36,6 +36,20 @@ to give K by checking in already created hashmap.  If it does then we increase t
 
 Important to note that this works because we always need to check backwards
 
+Current_Prefix_Sum - Prev_prefix_sum = K means subarray sum is K
+i.e. Current_prefix_Sum - K = prev_prefix_sum
+Here we are not maintaining prev_prefix_sum, but saving the curre_prefix_sum in a hash
+before moving further. This is similar to saving prev_prefix_sum in hash
+
+Now there can be mltiple subarrays with same sum, so essentially
+We can have multiple prev_prefix_sum same values saved in hash
+this is not possible as hash is unique, so we increase frequency of that key
+
+We have to count the subarrays with sum K so this works fine as we can add frequency to count
+If we had to find all subarrays with Sum K, then we will need to maintain an array of hashmaps
+Where Key is prev_sum and value is an array with index i,j. If there are more subarrays with
+same prev sum, then we append to this array for that prev_sum key.
+
 Time Complexity = O(n)
 Space Complexity = O(n)
 '''
